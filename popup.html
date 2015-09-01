@@ -27,6 +27,10 @@
             text-decoration: underline;
         }
 
+        #up-next-label, #up-next {
+            display: none;
+        }
+
         h3 {
             font: 18px normal black;
             margin: 5px 0 5px 20px;
@@ -39,13 +43,14 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
 </head>
 <body>
 <img id="background-image" src="background.png"/>
 <label for="growlers">Current Growlers</label><div id="growlers">Loading...</div>
 <label for="bottles">Current Bottles</label><div id="bottles">Loading...</div>
+<label for="up-next" id="up-next-label">Up Next</label><div id="up-next">Loading...</div>
 <label for="hours">Hours</label><div id="hours">Loading...</div>
+<script src="popup.js"></script>
 </body>
 </html>
 
