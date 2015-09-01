@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+<head>
+    <title>Getting Started Extension's Popup</title>
+    <style>
+        body {
+            width: 400px;
+        }
+
+        #background-image {
+            position: absolute;
+            left:     0;
+            top:      0;
+            width:    100%;
+            height:   auto;
+            opacity:  0.4;
+            z-index:  -100;
+        }
+
+        label {
+            font: 24px bolder black;
+            text-decoration: underline;
+        }
+
+        h3 {
+            font: 18px normal black;
+            margin: 5px 0 5px 20px;
+        }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="popup.js"></script>
+</head>
+<body>
+<img id="background-image" src="background.png"/>
+<label for="growlers">Current Growlers</label><div id="growlers">Loading...</div>
+<label for="bottles">Current Bottles</label><div id="bottles">Loading...</div>
+<label for="hours">Hours</label><div id="hours">Loading...</div>
+</body>
+</html>
+
