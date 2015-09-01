@@ -9,10 +9,6 @@
     "default_icon":  "icon.png",
     "default_popup": "popup.html"
   },
-  "content_scripts": [{
-      "matches": ["<all_urls>"],
-      "js":      ["jquery-2.1.4.min.js"]
-  }],
   "permissions": [
     "http://www.trilliumbrewing.com/wordpress_blog/beers/find-trillium-2/"
   ]
