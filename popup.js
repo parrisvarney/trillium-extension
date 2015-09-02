@@ -11,20 +11,24 @@ xhr.onload = function() {
         growlersDiv      = document.getElementById('growlers'),
         bottlesDiv       = document.getElementById('bottles'),
         upNextDiv        = document.getElementById('up-next'),
+        lastUpdatedDiv   = document.getElementById('last-updated'),
         retailHoursStart = this.responseText.indexOf('Retail Hours'),
         growlersStart    = this.responseText.indexOf('Growler Fills'),
         bottlesStart     = this.responseText.indexOf('Bottles'),
         upNextStart      = this.responseText.indexOf('Up Next'),
         bottleShopsStart = this.responseText.indexOf('BOTTLE SHOPS'),
+        lastUpdatedStart = this.responseText.indexOf('UPDATED'),
         retailHours,
         growlers,
         bottles,
-        upNext;
+        upNext,
+        lastUpdated;
 
     retailHours = this.responseText.substring(retailHoursStart, growlersStart).match(/<h3>(.*?)<\/h3>/ig);
     growlers    = this.responseText.substring(growlersStart, bottlesStart).match(/<h3>(.*?)<\/h3>/ig);
     bottles     = this.responseText.substring(bottlesStart, upNextStart).match(/<h3>(.*?)<\/h3>/ig);
     upNext      = this.responseText.substring(upNextStart, bottleShopsStart).match(/<h3>(.*?)<\/h3>/ig);
+    lastUpdated = this.responseText.substring(lastUpdatedStart + 8, lastUpdatedStart + 40).split('</span>')[0];
 
     hoursDiv.innerHTML = '';
     retailHours.forEach(function(r) {
@@ -40,6 +44,9 @@ xhr.onload = function() {
     bottles.forEach(function(r) {
         bottlesDiv.innerHTML = bottlesDiv.innerHTML + r;
     });
+
+    lastUpdatedDiv.innerHTML = '<h3>' + lastUpdated + '</h3';
+
 
     if (localStorage['showUpcoming'] *1) {
         upNextDiv.innerHTML = '';
