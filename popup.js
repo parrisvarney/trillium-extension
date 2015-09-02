@@ -5,7 +5,7 @@ if (localStorage['showUpcoming']*1) {
 }
 
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://www.trilliumbrewing.com/wordpress_blog/beers/find-trillium-2/', true);
+xhr.open('GET', 'http://www.trilliumbrewing.com/wordpress_blog/beers/find-trillium-2/?no-cache=' + new Date().getTime(), true);
 xhr.onload = function() {
     var hoursDiv         = document.getElementById('hours'),
         growlersDiv      = document.getElementById('growlers'),
