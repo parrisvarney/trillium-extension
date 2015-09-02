@@ -35,6 +35,13 @@
             font: 18px normal black;
             margin: 5px 0 5px 20px;
         }
+
+        #last-updated {
+            float:       right;
+            color: #a11009;
+            font-weight: 600;
+            font-size:   13px;
+        }
     </style>
 
     <!--
@@ -46,11 +53,11 @@
 </head>
 <body>
 <img id="background-image" src="background.png"/>
+<div id="last-updated"></div>
 <label for="growlers">Current Growlers</label><div id="growlers">Loading...</div>
 <label for="bottles">Current Bottles</label><div id="bottles">Loading...</div>
 <label for="up-next" id="up-next-label">Up Next</label><div id="up-next">Loading...</div>
 <label for="hours">Hours</label><div id="hours">Loading...</div>
-<label for="lastUpdated">Last Updated</label><div id="last-updated">Loading...</div>
 
 <script src="popup.js"></script>
 </body>

@@ -45,7 +45,7 @@ xhr.onload = function() {
         bottlesDiv.innerHTML = bottlesDiv.innerHTML + r;
     });
 
-    lastUpdatedDiv.innerHTML = '<h3>' + lastUpdated + '</h3';
+    lastUpdatedDiv.innerHTML = 'Updated: ' + lastUpdated;
 
 
     if (localStorage['showUpcoming'] *1) {
