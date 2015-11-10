@@ -4,13 +4,16 @@
   "name": "Trillium Tap List",
   "description": "Lets Chrome users know 'whats on tap' at Trillium at all times",
   "version": "1.1.2",
-
   "browser_action": {
     "default_icon":  "icon.png",
     "default_popup": "popup.html"
   },
   "options_page": "options.html",
   "permissions": [
-    "http://www.trilliumbrewing.com/wordpress_blog/beers/find-trillium-2/"
-  ]
+    "http://www.trilliumbrewing.com/"
+  ],
+  "content_scripts": [ {
+    "matches": ["http://www.trilliumbrewing.com/*"],
+    "js": ["jquery-2.1.4.min.js"]
+  }]
 }

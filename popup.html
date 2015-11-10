@@ -27,20 +27,21 @@
             text-decoration: underline;
         }
 
-        #up-next-label, #up-next {
-            display: none;
-        }
-
         h3 {
             font: 18px normal black;
             margin: 5px 0 5px 20px;
         }
 
-        #last-updated {
-            float:       right;
-            color: #a11009;
-            font-weight: 600;
-            font-size:   13px;
+        .available-beer-div {
+            color:     #40540d;
+            font-size: 20px;
+            padding:   4px;
+        }
+
+        .format-span {
+            color:     #7c4624;
+            font-size: 12px;
+            display:   block;
         }
     </style>
 
@@ -53,12 +54,9 @@
 </head>
 <body>
 <img id="background-image" src="background.png"/>
-<div id="last-updated"></div>
-<label for="growlers">Current Growlers</label><div id="growlers">Loading...</div>
-<label for="bottles">Current Bottles</label><div id="bottles">Loading...</div>
-<label for="up-next" id="up-next-label">Up Next</label><div id="up-next">Loading...</div>
-<label for="hours">Hours</label><div id="hours">Loading...</div>
+<label for="fort-point">Trillium Fort Point</label><div id="fort-point">Loading...</div>
 
+<script src="jquery-2.1.4.min.js"></script>
 <script src="popup.js"></script>
 </body>
 </html>
