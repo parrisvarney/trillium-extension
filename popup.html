@@ -10,16 +10,18 @@
     <style>
         body {
             width: 400px;
+            background: rgba(0, 0, 0, 0.5) url(background.png) no-repeat left top fixed;
+            background-size: 100% auto;
         }
 
-        #background-image {
-            position: absolute;
-            left:     0;
-            top:      0;
-            width:    100%;
-            height:   auto;
-            opacity:  0.4;
-            z-index:  -100;
+        #background-opacity {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255,255,255,0.6);
+            z-index: -100;
         }
 
         label {
@@ -33,9 +35,18 @@
         }
 
         .available-beer-div {
-            color:     #40540d;
-            font-size: 20px;
-            padding:   4px;
+            color:      #40540d;
+            font-size:  20px;
+            padding:    4px;
+            max-height: 300px;
+            overflow:   hidden;
+        }
+
+        .available-beer-div img {
+            height: 200px;
+            display: block;
+            padding-left: 50%;
+            transform: translateX(-25%);
         }
 
         .format-span {
@@ -43,17 +54,19 @@
             font-size: 12px;
             display:   block;
         }
-    </style>
 
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-     -->
+        #last-updated {
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 5px;
+            float: right;
+        }
+    </style>
 </head>
 <body>
-<img id="background-image" src="background.png"/>
+<div id="background-opacity"></div>
+<div id="last-updated"></div>
 <label for="fort-point">Trillium Fort Point</label><div id="fort-point">Loading...</div>
 
 <script src="jquery-2.1.4.min.js"></script>
