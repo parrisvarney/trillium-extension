@@ -62,13 +62,35 @@
             padding: 5px;
             float: right;
         }
+
+        #fort-point {
+            padding-bottom: 20px;
+        }
+
+        #fort-point-hours a,
+        #fort-point-hours a:hover,
+        #fort-point-hours a:active,
+        #fort-point-hours a:visited {
+            color: #40540d;
+            text-decoration: none;
+        }
+
+        #site-link {
+            text-align: center;
+            text-decoration: underline;
+            cursor: pointer;
+            color: blue;
+        }
     </style>
 </head>
 <body>
 <div id="background-opacity"></div>
 <div id="last-updated"></div>
-<label for="fort-point">Trillium Fort Point</label><div id="fort-point">Loading...</div>
-
+<label for="fort-point">Trillium Fort Point</label>
+<div id="fort-point">Loading...</div>
+<label for="fort-point-hours">Fort Point Hours</label>
+<div id="fort-point-hours"></div>
+<div id="site-link"><span>Go to Trillium's website.</span></div>
 <script src="jquery-2.1.4.min.js"></script>
 <script src="popup.js"></script>
 </body>

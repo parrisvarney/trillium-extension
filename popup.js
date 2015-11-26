@@ -1,7 +1,9 @@
 $.get('http://www.trilliumbrewing.com/?no-cache=' + new Date().getTime(), function(html) {
-    var fortPointBeers = [];
-    var fortPointText = '';
+    var fortPointBeers   = [];
+    var fortPointText    = '';
     var fortPointUpdated = new Date(0);
+    var fortPointHours   = $(html).find(':contains("fort point")').parent().find('p')[0];
+
 
     $(html).find('h3').each(function() {
         if ($(this).text().match(/AVAILABLE AT FORT POINT/i)) {
@@ -32,4 +34,9 @@ $.get('http://www.trilliumbrewing.com/?no-cache=' + new Date().getTime(), functi
 
     $('#fort-point').html(fortPointText);
     $('#last-updated').html(fortPointUpdated.toLocaleString());
+    $('#fort-point-hours').html(fortPointHours);
+});
+
+$('#site-link').find('span').on('click', function() {
+    window.open('http://www.trilliumbrewing.com/#trillium-brewing-beer-list-section','_blank');
 });
