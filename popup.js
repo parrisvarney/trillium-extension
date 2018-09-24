@@ -1,25 +1,20 @@
-$.get('http://www.trilliumbrewing.com/?no-cache=' + new Date().getTime(), function(html) {
+$.get('http://www.trilliumbrewing.com/fort-point-location/?no-cache=' + new Date().getTime(), function(html) {
     var fortPointBeers   = [];
     var fortPointText    = '';
     var fortPointUpdated = new Date(0);
     var fortPointHours   = $(html).find(':contains("fort point")').parent().find('p')[0];
 
 
-    $(html).find('h3').each(function() {
-        if ($(this).text().match(/AVAILABLE AT FORT POINT/i)) {
-            fortPointUpdated = new Date($(this).closest('[data-type=page]').data('updated-on'));
+    $(html).find('.summary-item').each(function() {
+	var beerName   = $(this).find('a').data('title');
+	var beerImg    = $(this).find('img').data('src');
+        var beerFormat = [];
+	
+        $(this).find('.summary-metadata-item--tags').each(function() {
+		beerFormat.push($(this).text());
+	});
 
-            $(this).closest('.sqs-block').next().find('img').each(function() {
-                var beerName = $(this).attr('alt');
-                var beerImg  = $(this).data('src');
-                var beerFormat = [];
-
-                $(this).closest('a').next().find('.summary-metadata-container--below-content .summary-metadata--primary .summary-metadata-item--tags a').each(function() {
-                    beerFormat.push($(this).text());
-                });
-                fortPointBeers.push({name: beerName, imgSrc: beerImg, format: beerFormat});
-            });
-        }
+        fortPointBeers.push({name: beerName, imgSrc: beerImg, format: beerFormat});
     });
 
     for (var i=0; i<fortPointBeers.length; i++) {
